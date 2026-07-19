@@ -4,11 +4,38 @@
 [build]
   publish = "."
 
-# Long cache for media & static assets (filenames are stable; replace files to update)
+# CSS & JS: short cache so every deploy shows fresh styles/scripts
+# (the ?v= query on includes busts older long-lived caches)
 [[headers]]
-  for = "/assets/*"
+  for = "/assets/css/*"
+  [headers.values]
+    Cache-Control = "public, max-age=300, must-revalidate"
+
+[[headers]]
+  for = "/assets/js/*"
+  [headers.values]
+    Cache-Control = "public, max-age=300, must-revalidate"
+
+# Heavy media only: long cache (replace the file = same name, new deploy)
+[[headers]]
+  for = "/assets/video/*"
   [headers.values]
     Cache-Control = "public, max-age=604800"
+
+[[headers]]
+  for = "/assets/img/*"
+  [headers.values]
+    Cache-Control = "public, max-age=604800"
+
+[[headers]]
+  for = "/assets/audio/*"
+  [headers.values]
+    Cache-Control = "public, max-age=604800"
+
+[[headers]]
+  for = "/data/*"
+  [headers.values]
+    Cache-Control = "public, max-age=300, must-revalidate"
 
 [[headers]]
   for = "/*.html"

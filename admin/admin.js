@@ -346,8 +346,8 @@
       '  <link rel="preconnect" href="https://fonts.googleapis.com">\n' +
       '  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>\n' +
       '  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;1,9..144,300;1,9..144,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">\n' +
-      '  <link rel="stylesheet" href="/assets/css/main.css">\n' +
-      '  <link rel="stylesheet" href="/assets/css/pages.css">\n' +
+      '  <link rel="stylesheet" href="/assets/css/main.css?v=4">\n' +
+      '  <link rel="stylesheet" href="/assets/css/pages.css?v=4">\n' +
       '</head>\n<body class="page">\n';
   }
 
@@ -369,8 +369,8 @@
       '    <p>Madame Wedding Design — Full Wedding Planning Service &amp; Production</p>\n' +
       '    <p><a href="mailto:hello@madamewedding.design">hello@madamewedding.design</a></p>\n' +
       '  </footer>\n' +
-      '  <script src="/assets/js/nav.js"><\/script>\n' +
-      '  <script src="/assets/js/page.js"><\/script>\n' +
+      '  <script src="/assets/js/nav.js?v=4"><\/script>\n' +
+      '  <script src="/assets/js/page.js?v=4"><\/script>\n' +
       '  <script src="/assets/js/' + script + '"><\/script>\n' +
       '</body>\n</html>\n';
   }
