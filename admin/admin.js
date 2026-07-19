@@ -346,8 +346,8 @@
       '  <link rel="preconnect" href="https://fonts.googleapis.com">\n' +
       '  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>\n' +
       '  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;1,9..144,300;1,9..144,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">\n' +
-      '  <link rel="stylesheet" href="/assets/css/main.css?v=4">\n' +
-      '  <link rel="stylesheet" href="/assets/css/pages.css?v=4">\n' +
+      '  <link rel="stylesheet" href="/assets/css/main.css?v=5">\n' +
+      '  <link rel="stylesheet" href="/assets/css/pages.css?v=5">\n' +
       '</head>\n<body class="page">\n';
   }
 

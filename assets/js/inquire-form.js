@@ -132,6 +132,8 @@ var FORMSPREE_ENDPOINT = ''; // TODO: e.g. 'https://formspree.io/f/xxxxxxx'
       var ok = true;
       current().querySelectorAll('.field').forEach(function (field) {
         field.classList.remove('has-error');
+        var groupErr = field.querySelector('.field__error');
+        if (groupErr) groupErr.style.display = '';
         var input = field.querySelector('input[required], textarea[required]');
         if (input) {
           var bad = input.type === 'checkbox' ? !input.checked :
