@@ -366,7 +366,7 @@
 
   function shellFoot(script) {
     return '  <footer class="footer">\n' +
-      '    <p>Madame Wedding Design — Wedding Planning &amp; Production · Paris</p>\n' +
+      '    <p>Madame Wedding Design — Full Wedding Planning Service &amp; Production</p>\n' +
       '    <p><a href="mailto:hello@madamewedding.design">hello@madamewedding.design</a></p>\n' +
       '  </footer>\n' +
       '  <script src="/assets/js/page.js"><\/script>\n' +

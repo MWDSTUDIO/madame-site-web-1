@@ -2,17 +2,13 @@
    Madame Wedding Design — inner pages, galleries, journal, form
    ============================================================ */
 
-/* ---------- Intro logo lockup ---------- */
+/* ---------- Intro logo — full brand name, two lines ---------- */
 
-.intro__logo { display: flex; flex-direction: column; align-items: center; gap: 0.9rem; }
-
-.intro__logo-sub {
-  font-family: var(--sans);
-  font-size: clamp(0.62rem, 1.2vw, 0.78rem);
-  font-weight: 300;
-  letter-spacing: 0.52em;
-  text-transform: uppercase;
-  padding-left: 0.52em;
+.intro__logo {
+  font-size: clamp(2.3rem, 7vw, 4.8rem) !important;
+  letter-spacing: 0.06em !important;
+  line-height: 1.12;
+  padding-left: 0 !important;
 }
 
 /* ---------- Page (non-home) layout ---------- */
@@ -548,10 +544,8 @@
 .footer-rich__lg {
   font-family: var(--serif);
   font-weight: 300;
-  font-size: 2.6rem;
+  font-size: clamp(1.5rem, 3vw, 2.1rem);
   letter-spacing: 0.06em;
-  display: flex;
-  flex-direction: column;
 }
 
 .footer-rich__lg span {
