@@ -177,8 +177,27 @@ body {
   object-fit: cover;
 }
 
+/* The current film is a vertical reel: on wide screens, present it centered
+   like a film screened in a dark gallery rather than cropping it brutally.
+   On portrait screens (phones) it fills the frame naturally.
+   (Kept after the base rules so it wins the cascade.) */
+@media (min-aspect-ratio: 1/1) {
+  .intro__video, .hero__video { object-fit: contain; }
+}
+
+/* Soft scrim so the hero line stays readable over the film's bright passages */
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: auto 0 0 0;
+  height: 45%;
+  background: linear-gradient(to top, rgba(30, 26, 23, 0.55), transparent);
+  pointer-events: none;
+}
+
 .hero__line {
   position: relative;
+  z-index: 1;
   padding: 0 clamp(1.5rem, 6vw, 5rem) clamp(3rem, 8vh, 6rem);
 }
 

@@ -9,22 +9,33 @@
   const siteVideo = document.getElementById('siteVideo');
 
   let soundOn = false;
-  let musicAvailable = null; // unknown until first play attempt
+  let musicAvailable = null; // separate music track (assets/audio/music.mp3), optional
+
+  function setSound(on) {
+    soundOn = on;
+    if (musicAvailable) {
+      if (on) { music.play(); } else { music.pause(); }
+    } else if (siteVideo) {
+      // The hero film carries its own soundtrack — unmute it directly.
+      siteVideo.muted = !on;
+      if (on) siteVideo.play().catch(function () {});
+    }
+    soundBtn.setAttribute('aria-pressed', String(on));
+  }
 
   /* ---------- Enter — the user gesture that unlocks sound ---------- */
 
   enterBtn.addEventListener('click', function () {
     site.hidden = false;
+    soundBtn.hidden = false;
 
-    // Try to start the music (only works if assets/audio/music.mp3 exists).
+    // Prefer a dedicated music track if one exists; otherwise use the film's own sound.
     music.play().then(function () {
       musicAvailable = true;
-      soundOn = true;
-      soundBtn.hidden = false;
-      soundBtn.setAttribute('aria-pressed', 'true');
+      setSound(true);
     }).catch(function () {
-      // No music file yet — the site stays elegantly silent.
       musicAvailable = false;
+      setSound(true);
     });
 
     intro.classList.add('is-leaving');
@@ -41,22 +52,15 @@
   /* ---------- Sound toggle ---------- */
 
   soundBtn.addEventListener('click', function () {
-    if (!musicAvailable) return;
-    soundOn = !soundOn;
-    if (soundOn) { music.play(); } else { music.pause(); }
-    soundBtn.setAttribute('aria-pressed', String(soundOn));
+    setSound(!soundOn);
   });
 
   /* ---------- Fade music out once the hero is scrolled past ---------- */
 
   const heroObserver = new IntersectionObserver(function (entries) {
     entries.forEach(function (entry) {
-      if (!musicAvailable || !soundOn) return;
-      if (!entry.isIntersecting) {
-        music.pause();
-        soundBtn.setAttribute('aria-pressed', 'false');
-        soundOn = false;
-      }
+      if (!soundOn) return;
+      if (!entry.isIntersecting) setSound(false);
     });
   }, { threshold: 0.15 });
 
