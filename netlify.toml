@@ -1,0 +1,16 @@
+# MADAME — Netlify configuration
+# Static site: no build step, publish the repo root.
+
+[build]
+  publish = "."
+
+# Long cache for media & static assets (filenames are stable; replace files to update)
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=604800"
+
+[[headers]]
+  for = "/*.html"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"

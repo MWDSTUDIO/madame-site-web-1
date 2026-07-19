@@ -1,0 +1,371 @@
+/* ============================================================
+   MADAME — Wedding Design & Production
+   Quiet luxury: alabaster, ink, silence.
+   ============================================================ */
+
+:root {
+  --alabaster: #F6F3EE;
+  --linen: #E7E0D5;
+  --ink: #1E1A17;
+  --sage: #8A8B72;
+  --taupe: #A79A88;
+
+  --serif: "Cormorant Garamond", Georgia, serif; /* TODO: swap for Canela / PP Editorial New when licensed */
+  --sans: "Inter", -apple-system, sans-serif;
+
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--alabaster);
+  color: var(--ink);
+  font-family: var(--sans);
+  font-weight: 300;
+  font-size: 1rem;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ---------- Opening sequence ---------- */
+
+.intro {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  background: var(--ink);
+  transition: opacity 1.4s var(--ease), visibility 1.4s;
+}
+
+.intro.is-leaving {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.intro__video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.intro__veil {
+  position: absolute;
+  inset: 0;
+  background: rgba(30, 26, 23, 0.28);
+}
+
+.intro__content {
+  position: relative;
+  text-align: center;
+  color: var(--alabaster);
+  padding: 0 1.5rem;
+}
+
+.intro__eyebrow {
+  font-size: 0.68rem;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  opacity: 0;
+  animation: fadeUp 1.6s var(--ease) 0.4s forwards;
+}
+
+.intro__logo {
+  font-family: var(--serif);
+  font-weight: 300;
+  font-size: clamp(3.2rem, 10vw, 7rem);
+  letter-spacing: 0.18em;
+  margin: 1.2rem 0 2.8rem;
+  padding-left: 0.18em; /* optical centering against letter-spacing */
+  opacity: 0;
+  animation: fadeUp 1.8s var(--ease) 0.8s forwards;
+}
+
+.intro__enter {
+  font-family: var(--sans);
+  font-size: 0.72rem;
+  font-weight: 400;
+  letter-spacing: 0.34em;
+  text-transform: uppercase;
+  color: var(--alabaster);
+  background: none;
+  border: 1px solid rgba(246, 243, 238, 0.45);
+  padding: 1.05rem 3.4rem 1rem 3.6rem;
+  cursor: pointer;
+  opacity: 0;
+  animation: fadeUp 1.8s var(--ease) 1.4s forwards;
+  transition: background 0.8s var(--ease), color 0.8s var(--ease), border-color 0.8s var(--ease);
+}
+
+.intro__enter:hover,
+.intro__enter:focus-visible {
+  background: var(--alabaster);
+  color: var(--ink);
+  border-color: var(--alabaster);
+  outline: none;
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(14px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ---------- Navigation ---------- */
+
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.6rem clamp(1.5rem, 5vw, 4rem);
+  mix-blend-mode: difference;
+  color: var(--alabaster);
+}
+
+.nav a { color: inherit; text-decoration: none; }
+
+.nav__logo {
+  font-family: var(--serif);
+  font-size: 1.25rem;
+  letter-spacing: 0.22em;
+}
+
+.nav__links {
+  display: flex;
+  gap: clamp(1.2rem, 3vw, 2.6rem);
+  font-size: 0.66rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.nav__links a { opacity: 0.85; transition: opacity 0.5s; }
+.nav__links a:hover { opacity: 1; }
+
+.nav__inquire { border-bottom: 1px solid currentColor; padding-bottom: 2px; }
+
+@media (max-width: 640px) {
+  .nav__links a:not(.nav__inquire) { display: none; }
+}
+
+/* ---------- Hero ---------- */
+
+.hero {
+  position: relative;
+  height: 100svh;
+  overflow: hidden;
+  display: grid;
+  place-items: end start;
+  background: var(--ink);
+}
+
+.hero__video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero__line {
+  position: relative;
+  padding: 0 clamp(1.5rem, 6vw, 5rem) clamp(3rem, 8vh, 6rem);
+}
+
+.hero__text {
+  font-family: var(--serif);
+  font-weight: 300;
+  font-size: clamp(1.6rem, 3.4vw, 2.8rem);
+  line-height: 1.3;
+  color: var(--alabaster);
+}
+
+/* ---------- Sections ---------- */
+
+section { padding: clamp(6rem, 14vh, 11rem) clamp(1.5rem, 6vw, 5rem); }
+
+.section-title {
+  font-family: var(--serif);
+  font-weight: 300;
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  letter-spacing: 0.02em;
+  margin-bottom: clamp(3rem, 7vh, 5rem);
+}
+
+/* Manifesto */
+
+.manifesto { max-width: 46rem; margin: 0 auto; text-align: center; }
+
+.manifesto__text {
+  font-family: var(--serif);
+  font-weight: 300;
+  font-size: clamp(1.35rem, 2.4vw, 1.9rem);
+  line-height: 1.55;
+}
+
+.manifesto__text em { font-style: italic; }
+
+.link-quiet {
+  display: inline-block;
+  margin-top: 2.6rem;
+  color: var(--ink);
+  text-decoration: none;
+  font-size: 0.7rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  border-bottom: 1px solid var(--taupe);
+  padding-bottom: 3px;
+  transition: opacity 0.5s;
+}
+
+.link-quiet:hover { opacity: 0.6; }
+
+/* Weddings */
+
+.weddings__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: clamp(1.5rem, 3vw, 3rem);
+}
+
+.wedding-card { text-decoration: none; color: var(--ink); }
+
+.wedding-card__img {
+  aspect-ratio: 4 / 5;
+  background: var(--linen);
+  overflow: hidden;
+  transition: opacity 0.8s var(--ease);
+}
+
+/* Placeholder tints until real photographs arrive */
+.wedding-card__img--a { background: linear-gradient(160deg, var(--linen), #D8CFC0); }
+.wedding-card__img--b { background: linear-gradient(160deg, #EDE6DB, var(--taupe)); }
+.wedding-card__img--c { background: linear-gradient(160deg, var(--linen), #C9C4AE); }
+
+.wedding-card:hover .wedding-card__img { opacity: 0.85; }
+
+.wedding-card__caption {
+  margin-top: 1.1rem;
+  font-family: var(--serif);
+  font-size: 1.15rem;
+}
+
+.wedding-card__caption span { font-style: italic; color: var(--sage); }
+
+.wedding-card__origin {
+  font-size: 0.68rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--taupe);
+  margin-top: 0.3rem;
+}
+
+/* Press */
+
+.press { background: var(--linen); text-align: center; }
+
+.press__label {
+  font-size: 0.66rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--taupe);
+  margin-bottom: 1.6rem;
+}
+
+.press__names {
+  font-family: var(--serif);
+  font-size: clamp(1rem, 2vw, 1.4rem);
+  letter-spacing: 0.06em;
+}
+
+/* Inquire */
+
+.inquire { text-align: center; }
+
+.inquire__text {
+  font-family: var(--serif);
+  font-size: clamp(1.2rem, 2.2vw, 1.7rem);
+  margin-bottom: 2.6rem;
+}
+
+.inquire__cta {
+  display: inline-block;
+  font-size: 0.72rem;
+  letter-spacing: 0.34em;
+  text-transform: uppercase;
+  color: var(--ink);
+  text-decoration: none;
+  border: 1px solid var(--ink);
+  padding: 1.05rem 3.4rem 1rem 3.6rem;
+  transition: background 0.8s var(--ease), color 0.8s var(--ease);
+}
+
+.inquire__cta:hover { background: var(--ink); color: var(--alabaster); }
+
+/* Footer */
+
+.footer {
+  border-top: 1px solid var(--linen);
+  padding: 2.5rem clamp(1.5rem, 6vw, 5rem);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: space-between;
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  color: var(--taupe);
+}
+
+.footer a { color: inherit; text-decoration: none; }
+
+/* ---------- Sound toggle ---------- */
+
+.sound {
+  position: fixed;
+  bottom: 1.4rem;
+  right: 1.6rem;
+  z-index: 60;
+  width: 2.6rem;
+  height: 2.6rem;
+  border-radius: 50%;
+  border: 1px solid rgba(30, 26, 23, 0.25);
+  background: rgba(246, 243, 238, 0.6);
+  backdrop-filter: blur(6px);
+  color: var(--ink);
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: opacity 0.6s;
+}
+
+.sound[aria-pressed="false"] { opacity: 0.45; }
+
+/* ---------- Scroll reveals ---------- */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.9s var(--ease), transform 0.9s var(--ease);
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ---------- Reduced motion ---------- */
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .reveal { opacity: 1; transform: none; transition: none; }
+  .intro__eyebrow, .intro__logo, .intro__enter { animation-duration: 0.01s; animation-delay: 0s; }
+}
