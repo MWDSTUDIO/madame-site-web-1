@@ -33,6 +33,11 @@
   enterBtn.addEventListener('click', function () {
     site.hidden = false;
 
+    // The films begin only past the threshold — start the visible one now.
+    document.querySelectorAll('.hero video').forEach(function (v) {
+      if (getComputedStyle(v).display !== 'none') v.play().catch(function () {});
+    });
+
     // Prefer a dedicated music track if one exists; otherwise the film's own
     // sound (mobile). On desktop with no music track, the site stays silent.
     music.play().then(function () {

@@ -178,6 +178,23 @@ var FORMSPREE_ENDPOINT = ''; // TODO: e.g. 'https://formspree.io/f/xxxxxxx'
       nextBtn.disabled = true;
       nextBtn.textContent = 'Sending…';
 
+      function sendNetlify() {
+        // Backup channel — Netlify Forms (dashboard + optional notification).
+        // Pairs with the hidden static form named "inquire" in the page HTML.
+        var body = new URLSearchParams();
+        body.append('form-name', 'inquire');
+        Object.keys(data).forEach(function (k) {
+          if (k[0] !== '_') body.append(k, data[k]);
+        });
+        return fetch('/', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+          body: body.toString()
+        }).then(function (r) {
+          if (r.ok) { showConfirmation(); } else { throw new Error('send failed'); }
+        });
+      }
+
       if (FORMSPREE_ENDPOINT) {
         // Option A — Formspree (if an endpoint is configured)
         fetch(FORMSPREE_ENDPOINT, {
@@ -188,21 +205,20 @@ var FORMSPREE_ENDPOINT = ''; // TODO: e.g. 'https://formspree.io/f/xxxxxxx'
           if (r.ok) { showConfirmation(); } else { throw new Error('send failed'); }
         }).catch(fail);
       } else {
-        // Option B (default) — Netlify Forms: silent background POST, no email
-        // window for the visitor. Pairs with the hidden static form named
-        // "inquire" present in the page HTML (required for Netlify detection).
-        var body = new URLSearchParams();
-        body.append('form-name', 'inquire');
-        Object.keys(data).forEach(function (k) {
-          if (k[0] !== '_') body.append(k, data[k]);
-        });
-        fetch('/', {
+        // Option B (default) — direct email to the maison via FormSubmit,
+        // silently in the background. Netlify Forms is the fallback channel.
+        fetch('https://formsubmit.co/ajax/hello@madamewedding.design', {
           method: 'POST',
-          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-          body: body.toString()
+          headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+          body: JSON.stringify(Object.assign({}, data, {
+            _template: 'table',
+            _captcha: 'false'
+          }))
         }).then(function (r) {
           if (r.ok) { showConfirmation(); } else { throw new Error('send failed'); }
-        }).catch(fail);
+        }).catch(function () {
+          sendNetlify().catch(fail);
+        });
       }
     }
 

@@ -30,16 +30,12 @@
 
   <!-- ============ INTRO / ENTER — the threshold ============ -->
   <div class="intro" id="intro">
-    <!-- Desktop: the wide hero film (muted). Mobile (<768px): the same film, center-cropped to 9:16 (muted). -->
-    <video class="intro__video media-desktop" autoplay muted loop playsinline
-           poster="/assets/img/hero-photo.jpg?v=2"
-           aria-label="Aerial view of an outdoor wedding ceremony on a Tuscan hillside — a Madame Wedding Design celebration">
-      <source src="/assets/video/hero-film-desktop.mp4?v=2" type="video/mp4">
-    </video>
-    <video class="intro__video media-mobile" id="introVideo" autoplay muted loop playsinline
-           poster="/assets/video/hero-poster.jpg?v=2">
-      <source src="/assets/video/hero-film-mobile.mp4?v=2" type="video/mp4">
-    </video>
+    <!-- Before "Enter": a still frame of the film, on every device. The film
+         itself (with its music) begins only past the threshold. -->
+    <img class="intro__photo media-desktop" src="/assets/img/hero-photo.jpg?v=2"
+         alt="Aerial view of an outdoor wedding ceremony on a Tuscan hillside — a Madame Wedding Design celebration">
+    <img class="intro__photo media-mobile" src="/assets/video/hero-poster.jpg?v=2"
+         alt="Aerial view of an outdoor wedding ceremony on a Tuscan hillside — a Madame Wedding Design celebration">
     <div class="intro__veil"></div>
     <div class="intro__content">
       <p class="intro__eyebrow">Full Wedding Planning Service &amp; Production</p>
@@ -66,12 +62,12 @@
 
       <!-- Hero: wide film on desktop (muted), vertical crop on mobile -->
       <section class="hero">
-        <video class="hero__video media-desktop" autoplay muted loop playsinline
+        <video class="hero__video media-desktop" muted loop playsinline preload="metadata"
                poster="/assets/img/hero-photo.jpg?v=2"
                aria-label="Aerial view of an outdoor wedding ceremony on a Tuscan hillside — a Madame Wedding Design celebration">
           <source src="/assets/video/hero-film-desktop.mp4?v=2" type="video/mp4">
         </video>
-        <video class="hero__video media-mobile" id="siteVideo" autoplay muted loop playsinline
+        <video class="hero__video media-mobile" id="siteVideo" muted loop playsinline preload="metadata"
                poster="/assets/video/hero-poster.jpg?v=2">
           <source src="/assets/video/hero-film-mobile.mp4?v=2" type="video/mp4">
         </video>
@@ -212,7 +208,7 @@
   <button class="sound" id="soundBtn" hidden aria-label="Toggle sound" aria-pressed="false">◐</button>
 
   <!-- Music track: drop your file at assets/audio/music.mp3 and it will take priority over the film's own sound -->
-  <audio id="music" src="/assets/audio/music.mp3" loop preload="none"></audio>
+  <audio id="music" src="/assets/audio/music.mp3?v=2" loop preload="none"></audio>
 
   
   <!-- Netlify Forms detection: hidden static mirror of the JS-rendered form.
@@ -236,7 +232,7 @@
   </form>
 
   <script src="/assets/js/nav.js?v=4"></script>
-  <script src="/assets/js/main.js?v=5"></script>
-  <script src="/assets/js/inquire-form.js?v=6"></script>
+  <script src="/assets/js/main.js?v=6"></script>
+  <script src="/assets/js/inquire-form.js?v=7"></script>
 </body>
 </html>

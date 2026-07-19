@@ -50,18 +50,18 @@ Toutes les listes (accueil, portfolio, journal) se mettent à jour automatiqueme
 5 étapes (You → Celebration → Vision → Investment → Last word), un seul composant partagé
 (`assets/js/inquire-form.js`) affiché sur `/inquire/` et en bas de l'accueil.
 
-**Envoi : Netlify Forms (intégré, aucune fenêtre e-mail pour le client).**
-La demande part en silence vers Netlify ; tu la reçois dans le tableau de bord + par e-mail.
+**Envoi : e-mail direct à `hello@madamewedding.design` via FormSubmit** — silencieux
+pour le client (pas de fenêtre e-mail), les réponses arrivent en tableau dans ta boîte.
 
-**À activer une fois dans Netlify** (2 minutes) :
-1. *Project configuration → Forms* → **Enable form detection**, puis redéployer
-   (*Deploys → Trigger deploy*). Le formulaire « inquire » apparaît dans l'onglet *Forms*.
-2. *Forms → Form notifications → Add notification → Email notification* →
-   `hello@madamewedding.design`. Chaque demande arrive alors dans ta boîte mail.
+**À faire une fois** : la toute première demande envoyée déclenche un e-mail
+d'activation de FormSubmit dans ta boîte — clique « Activate » et c'est réglé.
+(Astuce : envoie toi-même une demande test dès la mise en ligne pour l'activer.)
 
-Gratuit jusqu'à 100 demandes/mois (largement suffisant pour un formulaire filtrant UHNW).
+**Canal de secours** : si FormSubmit échoue, l'envoi bascule sur Netlify Forms
+(tableau de bord Netlify → onglet *Forms* ; active *form detection* + une
+notification e-mail pour ce canal aussi, 2 minutes).
 Alternative : Formspree — colle ton endpoint dans `FORMSPREE_ENDPOINT` en tête de
-`assets/js/inquire-form.js` et il prendra la priorité.
+`assets/js/inquire-form.js` et il prendra la priorité sur tout.
 
 ## Structure
 
