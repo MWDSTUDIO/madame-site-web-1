@@ -30,8 +30,12 @@
 
   <!-- ============ INTRO / ENTER — the threshold ============ -->
   <div class="intro" id="intro">
-    <!-- Desktop: still photograph. Mobile (<768px): the vertical film, muted. -->
-    <img class="intro__photo media-desktop" src="/assets/img/hero-photo.jpg" alt="A Madame Wedding Design celebration under a glasshouse — chandeliers and flowered tables">
+    <!-- Desktop: the wide hero film (muted). Mobile (<768px): the vertical reel (muted). -->
+    <video class="intro__video media-desktop" autoplay muted loop playsinline
+           poster="/assets/img/hero-photo.jpg"
+           aria-label="Aerial view of an outdoor wedding ceremony on a Tuscan hillside — a Madame Wedding Design celebration">
+      <source src="/assets/video/hero-film-desktop.mp4" type="video/mp4">
+    </video>
     <video class="intro__video media-mobile" id="introVideo" autoplay muted loop playsinline
            poster="/assets/video/hero-poster.jpg">
       <source src="/assets/video/hero-film.mp4" type="video/mp4">
@@ -60,9 +64,13 @@
 
     <main id="top">
 
-      <!-- Hero: photo on desktop, the film on mobile -->
+      <!-- Hero: wide film on desktop (muted), vertical reel on mobile -->
       <section class="hero">
-        <img class="hero__photo media-desktop" src="/assets/img/hero-photo.jpg" alt="A Madame Wedding Design celebration under a glasshouse — chandeliers and flowered tables">
+        <video class="hero__video media-desktop" autoplay muted loop playsinline
+               poster="/assets/img/hero-photo.jpg"
+               aria-label="Aerial view of an outdoor wedding ceremony on a Tuscan hillside — a Madame Wedding Design celebration">
+          <source src="/assets/video/hero-film-desktop.mp4" type="video/mp4">
+        </video>
         <video class="hero__video media-mobile" id="siteVideo" autoplay muted loop playsinline
                poster="/assets/video/hero-poster.jpg">
           <source src="/assets/video/hero-film.mp4" type="video/mp4">
@@ -228,7 +236,7 @@
   </form>
 
   <script src="/assets/js/nav.js?v=4"></script>
-  <script src="/assets/js/main.js?v=4"></script>
+  <script src="/assets/js/main.js?v=5"></script>
   <script src="/assets/js/inquire-form.js?v=5"></script>
 </body>
 </html>

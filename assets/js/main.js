@@ -154,15 +154,22 @@
     })
     .catch(function () {});
 
-  /* ---------- Keep the mobile film efficient ---------- */
+  /* ---------- Keep the films efficient ---------- */
 
-  if (siteVideo) {
+  document.querySelectorAll('.intro video, .hero video').forEach(function (v) {
+    // The hidden variant (desktop film on mobile, reel on desktop) should not play
+    if (getComputedStyle(v).display === 'none') {
+      v.pause();
+      v.removeAttribute('autoplay');
+      v.preload = 'none';
+      return;
+    }
+    // Pause the visible hero film when it leaves the viewport
     new IntersectionObserver(function (entries) {
       entries.forEach(function (entry) {
-        if (!videoVisible()) return;
-        if (entry.isIntersecting) { siteVideo.play().catch(function () {}); }
-        else { siteVideo.pause(); }
+        if (entry.isIntersecting) { v.play().catch(function () {}); }
+        else { v.pause(); }
       });
-    }, { threshold: 0.1 }).observe(siteVideo);
-  }
+    }, { threshold: 0.1 }).observe(v);
+  });
 })();
