@@ -47,15 +47,21 @@ Toutes les listes (accueil, portfolio, journal) se mettent à jour automatiqueme
 
 ## Le formulaire Inquire
 
-5 étapes (You → Celebration → Vision → Investment → Last word), validation douce, barre de progression.
-**À faire une fois** : créer un compte gratuit sur [formspree.io](https://formspree.io), pointer vers
-`hello@madamewedding.design`, puis coller l'endpoint dans `assets/js/inquire.js` :
+5 étapes (You → Celebration → Vision → Investment → Last word), un seul composant partagé
+(`assets/js/inquire-form.js`) affiché sur `/inquire/` et en bas de l'accueil.
 
-```js
-var FORMSPREE_ENDPOINT = 'https://formspree.io/f/xxxxxxx';
-```
+**Envoi : Netlify Forms (intégré, aucune fenêtre e-mail pour le client).**
+La demande part en silence vers Netlify ; tu la reçois dans le tableau de bord + par e-mail.
 
-Tant qu'il n'est pas configuré, l'envoi ouvre le logiciel e-mail du visiteur, pré-rempli (solution de secours).
+**À activer une fois dans Netlify** (2 minutes) :
+1. *Project configuration → Forms* → **Enable form detection**, puis redéployer
+   (*Deploys → Trigger deploy*). Le formulaire « inquire » apparaît dans l'onglet *Forms*.
+2. *Forms → Form notifications → Add notification → Email notification* →
+   `hello@madamewedding.design`. Chaque demande arrive alors dans ta boîte mail.
+
+Gratuit jusqu'à 100 demandes/mois (largement suffisant pour un formulaire filtrant UHNW).
+Alternative : Formspree — colle ton endpoint dans `FORMSPREE_ENDPOINT` en tête de
+`assets/js/inquire-form.js` et il prendra la priorité.
 
 ## Structure
 

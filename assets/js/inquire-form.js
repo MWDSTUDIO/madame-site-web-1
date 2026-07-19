@@ -165,32 +165,42 @@ var FORMSPREE_ENDPOINT = ''; // TODO: e.g. 'https://formspree.io/f/xxxxxxx'
       mount.scrollIntoView({ behavior: 'smooth', block: 'center' });
     }
 
+    function fail() {
+      nextBtn.disabled = false;
+      nextBtn.textContent = 'Send enquiry';
+      alert('Something interrupted the sending. Please try again, or write to hello@madamewedding.design.');
+    }
+
     function submit() {
       var data = collect();
       nextBtn.disabled = true;
       nextBtn.textContent = 'Sending…';
 
       if (FORMSPREE_ENDPOINT) {
+        // Option A — Formspree (if an endpoint is configured)
         fetch(FORMSPREE_ENDPOINT, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
           body: JSON.stringify(data)
         }).then(function (r) {
-          if (r.ok) { showConfirmation(); }
-          else { throw new Error('send failed'); }
-        }).catch(function () {
-          nextBtn.disabled = false;
-          nextBtn.textContent = 'Send enquiry';
-          alert('Something interrupted the sending. Please try again, or write to hello@madamewedding.design.');
-        });
+          if (r.ok) { showConfirmation(); } else { throw new Error('send failed'); }
+        }).catch(fail);
       } else {
-        var lines = Object.keys(data).filter(function (k) { return k[0] !== '_'; }).map(function (k) {
-          return k + ': ' + data[k];
+        // Option B (default) — Netlify Forms: silent background POST, no email
+        // window for the visitor. Pairs with the hidden static form named
+        // "inquire" present in the page HTML (required for Netlify detection).
+        var body = new URLSearchParams();
+        body.append('form-name', 'inquire');
+        Object.keys(data).forEach(function (k) {
+          if (k[0] !== '_') body.append(k, data[k]);
         });
-        window.location.href = 'mailto:hello@madamewedding.design' +
-          '?subject=' + encodeURIComponent(data._subject) +
-          '&body=' + encodeURIComponent(lines.join('\n'));
-        showConfirmation();
+        fetch('/', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+          body: body.toString()
+        }).then(function (r) {
+          if (r.ok) { showConfirmation(); } else { throw new Error('send failed'); }
+        }).catch(fail);
       }
     }
 

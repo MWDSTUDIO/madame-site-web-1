@@ -206,8 +206,29 @@
   <!-- Music track: drop your file at assets/audio/music.mp3 and it will take priority over the film's own sound -->
   <audio id="music" src="/assets/audio/music.mp3" loop preload="none"></audio>
 
+  
+  <!-- Netlify Forms detection: hidden static mirror of the JS-rendered form.
+       Field names must match assets/js/inquire-form.js. -->
+  <form name="inquire" data-netlify="true" netlify-honeypot="bot-field" hidden>
+    <input type="text" name="bot-field">
+    <input type="text" name="names">
+    <input type="email" name="email">
+    <input type="tel" name="phone">
+    <input type="text" name="found">
+    <input type="text" name="date">
+    <input type="text" name="destination">
+    <input type="text" name="guests">
+    <input type="text" name="type">
+    <textarea name="vision"></textarea>
+    <input type="text" name="services">
+    <input type="text" name="investment">
+    <textarea name="more"></textarea>
+    <input type="text" name="consent">
+    <input type="text" name="newsletter">
+  </form>
+
   <script src="/assets/js/nav.js?v=4"></script>
   <script src="/assets/js/main.js?v=4"></script>
-  <script src="/assets/js/inquire-form.js?v=4"></script>
+  <script src="/assets/js/inquire-form.js?v=5"></script>
 </body>
 </html>
