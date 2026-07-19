@@ -13,7 +13,7 @@ Site statique multi-pages + application d'administration (« L'Atelier »).
 | URL | Page |
 |---|---|
 | `/` | Accueil — séquence d'ouverture « Enter », héro, portfolio, maison, services, presse, journal |
-| `/maison/` | The Maison (About, paragraphe « citable » SEO/GEO) |
+| `/the-maison/` | The Maison (About, paragraphe « citable » SEO/GEO) |
 | `/weddings/` | Portfolio — tous les mariages |
 | `/weddings/<slug>/` | Une page par mariage |
 | `/services/` | Les trois accompagnements + FAQ (schema FAQPage) |

@@ -50,7 +50,7 @@
     <header class="nav" id="nav">
       <a class="nav__logo" href="/">Madame Wedding Design</a>
       <nav class="nav__links" aria-label="Main navigation">
-        <a href="/maison/">The Maison</a>
+        <a href="/the-maison/">The Maison</a>
         <a href="/weddings/">Weddings</a>
         <a href="/services/">Services</a>
         <a href="/journal/">The Journal</a>
@@ -107,7 +107,7 @@
             From first conversation to final candle, we hold every thread:
             creative direction, planning, and flawless production — worldwide.
           </p>
-          <a href="/maison/" class="link-quiet" style="margin-top:1.6rem">Discover the Maison →</a>
+          <a href="/the-maison/" class="link-quiet" style="margin-top:1.6rem">Discover the Maison →</a>
         </div>
         <div class="maison-split__img reveal">
           <div class="ph ph--b" role="img" aria-label="Founder portrait — coming soon"></div>
@@ -156,10 +156,18 @@
         <div class="jgrid" id="homeJournal"><!-- injected from /data/weddings.json --></div>
       </section>
 
-      <!-- Inquire -->
-      <section class="inquire">
-        <p class="inquire__text reveal">We accept a limited number of celebrations each year.<br>Share a few details and we will reply, personally, within 48 hours.</p>
-        <a class="inquire__cta reveal" href="/inquire/">Inquire</a>
+      <!-- Inquire — closing section: the shared 5-step form -->
+      <section class="inquire-home" id="inquire">
+        <div class="shead reveal" style="justify-content:center; text-align:center">
+          <div>
+            <span class="shead__k">Inquire</span>
+            <h2 class="shead__title" style="margin-top:0.8rem">Tell us about your celebration</h2>
+            <p style="margin-top:1rem; color:var(--ink-soft); max-width:52ch">We accept a limited number of weddings each year. Share a few details and we will reply, personally, within 48 hours.</p>
+          </div>
+        </div>
+        <div class="form-wrap" data-inquire-form>
+          <!-- The shared 5-step form renders here (assets/js/inquire-form.js) -->
+        </div>
       </section>
 
     </main>
@@ -172,7 +180,7 @@
         </div>
         <div class="footer-rich__col">
           <div class="footer-rich__k">Explore</div>
-          <a href="/maison/">The Maison</a>
+          <a href="/the-maison/">The Maison</a>
           <a href="/weddings/">Weddings</a>
           <a href="/services/">Services</a>
           <a href="/journal/">The Journal</a>
@@ -198,6 +206,8 @@
   <!-- Music track: drop your file at assets/audio/music.mp3 and it will take priority over the film's own sound -->
   <audio id="music" src="/assets/audio/music.mp3" loop preload="none"></audio>
 
+  <script src="/assets/js/nav.js"></script>
   <script src="/assets/js/main.js"></script>
+  <script src="/assets/js/inquire-form.js"></script>
 </body>
 </html>

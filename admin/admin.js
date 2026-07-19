@@ -356,7 +356,7 @@
     return '  <header class="nav nav--page">\n' +
       '    <a class="nav__logo" href="/">Madame Wedding Design</a>\n' +
       '    <nav class="nav__links" aria-label="Main navigation">\n' +
-      '      <a href="/maison/">The Maison</a>\n' +
+      '      <a href="/the-maison/">The Maison</a>\n' +
       '      <a href="/weddings/"' + cur('weddings') + '>Weddings</a>\n' +
       '      <a href="/services/">Services</a>\n' +
       '      <a href="/journal/"' + cur('journal') + '>The Journal</a>\n' +
@@ -369,6 +369,7 @@
       '    <p>Madame Wedding Design — Full Wedding Planning Service &amp; Production</p>\n' +
       '    <p><a href="mailto:hello@madamewedding.design">hello@madamewedding.design</a></p>\n' +
       '  </footer>\n' +
+      '  <script src="/assets/js/nav.js"><\/script>\n' +
       '  <script src="/assets/js/page.js"><\/script>\n' +
       '  <script src="/assets/js/' + script + '"><\/script>\n' +
       '</body>\n</html>\n';
