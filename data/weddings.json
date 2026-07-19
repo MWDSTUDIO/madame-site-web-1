@@ -1,0 +1,72 @@
+{
+  "weddings": [
+    {
+      "slug": "castiglion-del-bosco",
+      "couple": "Sophie & Gordon",
+      "displayTitle": "Castiglion del Bosco",
+      "venue": "Castiglion del Bosco",
+      "destination": "Val d'Orcia, Tuscany",
+      "country": "Italy",
+      "year": 2026,
+      "coupleOrigin": "A New York couple, Texas roots",
+      "story": "In the golden hills of the Val d'Orcia, a New York couple with Texas roots gathered their world at Castiglion del Bosco — a thousand-year-old estate turned into a single, unhurried celebration.",
+      "keywords": "Castiglion del Bosco wedding, luxury wedding planner Tuscany, Val d'Orcia destination wedding, Tuscany wedding for American couples",
+      "featured": true,
+      "portfolio": { "photos": [] },
+      "journal": { "published": false, "title": "", "excerpt": "", "story": "", "photos": [], "press": [] }
+    },
+    {
+      "slug": "vogue-bride-paris",
+      "couple": "Chloé",
+      "displayTitle": "A Vogue Bride",
+      "venue": "Paris",
+      "destination": "Paris",
+      "country": "France",
+      "year": 2025,
+      "coupleOrigin": "Featured in seven editions of Vogue",
+      "story": "A Paris celebration crowned by a vintage Chanel gown once worn on the runway — a wedding that travelled through seven editions of Vogue.",
+      "keywords": "vintage Chanel wedding dress, Vogue featured Paris wedding, Paris wedding planner Vogue, luxury wedding Paris",
+      "featured": true,
+      "portfolio": { "photos": [] },
+      "journal": {
+        "published": true,
+        "title": "A Vintage Chanel Bride in Paris",
+        "excerpt": "The Paris wedding whose vintage Chanel gown travelled through seven editions of Vogue.",
+        "story": "Some celebrations belong to a single evening; this one belongs to the archives. In Paris, our bride wore a vintage Chanel gown first seen on the runway — and Vogue told the story in seven of its editions, from London to Sydney.",
+        "photos": [],
+        "press": [
+          { "name": "Vogue UK", "url": "https://www.vogue.co.uk/gallery/vintage-chanel-wedding-dress-paris" },
+          { "name": "Vogue France", "url": "https://www.vogue.fr/galerie/mariage-paris-robe-mariee-chanel-fan-vintage-portee-claudia-schiffer" },
+          { "name": "Vogue Arabia", "url": "https://www.voguearabia.com/gallery/paris-bride-pink-vintage-chanel-wedding-dress" },
+          { "name": "Vogue Germany", "url": "https://www.vogue.de/galerie/hochzeit-braut-chanel-kleid-claudia-schiffer" },
+          { "name": "Vogue Poland", "url": "https://www.vogue.pl/a/digitalsyndication-panna-mloda-wziela-slub-w-rozowej-sukni-chanel-ktora-na-wybiegu-nosila-claudia-schiffer" },
+          { "name": "Vogue Australia", "url": "https://www.vogue.com.au/fashion/news/this-paris-brides-pink-vintage-chanel-wedding-dress-was-worn-by-claudia-schiffer-on-the-runway/image-gallery/1be94626332a44805f3cb2e6d7abfd6b" }
+        ]
+      }
+    },
+    {
+      "slug": "chateau-burgundy",
+      "couple": "Aimee & John",
+      "displayTitle": "A Château in Burgundy",
+      "venue": "A private château",
+      "destination": "Burgundy",
+      "country": "France",
+      "year": 2024,
+      "coupleOrigin": "An Irish couple, married in France",
+      "story": "An Irish couple crossed the sea for a château in Burgundy — candlelight, French savoir-faire, and a celebration told later by Over The Moon.",
+      "keywords": "château wedding Burgundy France, Irish couple destination wedding France, luxury wedding planner Burgundy",
+      "featured": true,
+      "portfolio": { "photos": [] },
+      "journal": {
+        "published": true,
+        "title": "An Irish Love Story, a Burgundy Château",
+        "excerpt": "Aimee and John crossed the sea for a château in Burgundy — as told by Over The Moon.",
+        "story": "Burgundy rewards those who travel for it. For Aimee and John, an Irish couple, the maison composed a château weekend of candlelight and French savoir-faire — a celebration Over The Moon later told in full.",
+        "photos": [],
+        "press": [
+          { "name": "Over The Moon", "url": "https://blog.overthemoon.com/weddings/aimee-connolly-and-john-greene-in-france/" }
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Journal — Madame Wedding Design | Real Celebrations &amp; Press</title>
+  <meta name="description" content="Stories of real celebrations by Madame Wedding Design — and the maison's press features in Vogue, Martha Stewart Weddings, Brides, Style Me Pretty and more.">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90' font-family='Georgia'>M</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;1,9..144,300;1,9..144,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <link rel="stylesheet" href="/assets/css/pages.css">
+</head>
+<body class="page">
+
+  <header class="nav nav--page">
+    <a class="nav__logo" href="/">Madame Wedding Design</a>
+    <nav class="nav__links" aria-label="Main navigation">
+      <a href="/maison/">The Maison</a>
+      <a href="/weddings/">Weddings</a>
+      <a href="/services/">Services</a>
+      <a href="/journal/" aria-current="page">The Journal</a>
+      <a class="nav__inquire" href="/inquire/">Inquire</a>
+    </nav>
+  </header>
+
+  <main>
+    <div class="page-hero reveal">
+      <p class="page-hero__eyebrow">The Journal</p>
+      <h1 class="page-hero__title">Stories of celebrations,<br>and where they were told.</h1>
+    </div>
+
+    <section class="journal-list" id="journalList"><!-- rendered from /data/weddings.json --></section>
+
+    <section class="press" id="as-seen-in" style="text-align:left">
+      <p class="press__label reveal">As seen in</p>
+      <p class="press__names reveal" id="pressLogos"></p>
+      <div class="journal-list reveal" style="padding:0; margin-top:3rem">
+        <ul class="press-links" id="pressLinks"><!-- rendered from /data/press.json --></ul>
+      </div>
+    </section>
+
+    <section class="cta-band">
+      <p>Your story could be the next one told.</p>
+      <a class="inquire__cta" href="/inquire/">Inquire</a>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>Madame Wedding Design — Wedding Planning &amp; Production · Paris</p>
+    <p><a href="mailto:hello@madamewedding.design">hello@madamewedding.design</a></p>
+  </footer>
+
+  <script src="/assets/js/page.js"></script>
+  <script>
+    fetch('/data/weddings.json').then(function (r) { return r.json(); }).then(function (data) {
+      var list = document.getElementById('journalList');
+      data.weddings.filter(function (w) { return w.journal && w.journal.published; }).forEach(function (w) {
+        var a = document.createElement('a');
+        a.className = 'journal-entry';
+        a.href = '/journal/' + w.slug + '/';
+        a.innerHTML =
+          '<p class="journal-entry__meta">' + w.destination + ' · ' + w.year + '</p>' +
+          '<h2 class="journal-entry__title">' + w.journal.title + '</h2>' +
+          '<p class="journal-entry__excerpt">' + w.journal.excerpt + '</p>';
+        list.appendChild(a);
+      });
+    });
+    fetch('/data/press.json').then(function (r) { return r.json(); }).then(function (data) {
+      document.getElementById('pressLogos').textContent = data.logos.join('  ·  ');
+      var ul = document.getElementById('pressLinks');
+      data.authority.forEach(function (p) {
+        var li = document.createElement('li');
+        li.innerHTML = '<a href="' + p.url + '" target="_blank" rel="noopener">' + p.name + '</a>';
+        ul.appendChild(li);
+      });
+    });
+  </script>
+</body>
+</html>

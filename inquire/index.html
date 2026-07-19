@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Inquire — Madame Wedding Design | Tell Us About Your Celebration</title>
+  <meta name="description" content="Begin a conversation with Madame Wedding Design. We accept a limited number of celebrations each year and reply, personally, within 48 hours.">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90' font-family='Georgia'>M</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;1,9..144,300;1,9..144,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <link rel="stylesheet" href="/assets/css/pages.css">
+</head>
+<body class="page">
+
+  <header class="nav nav--page">
+    <a class="nav__logo" href="/">Madame Wedding Design</a>
+    <nav class="nav__links" aria-label="Main navigation">
+      <a href="/maison/">The Maison</a>
+      <a href="/weddings/">Weddings</a>
+      <a href="/services/">Services</a>
+      <a href="/journal/">The Journal</a>
+      <a class="nav__inquire" href="/inquire/" aria-current="page">Inquire</a>
+    </nav>
+  </header>
+
+  <main>
+    <div class="page-hero reveal">
+      <p class="page-hero__eyebrow">Inquire</p>
+      <h1 class="page-hero__title">Tell us about<br>your celebration.</h1>
+      <p style="margin-top:1.6rem; max-width:52ch; color:var(--ink-soft)">
+        We accept a limited number of weddings each year. Share a few details
+        and we will reply, personally, within 48 hours.
+      </p>
+    </div>
+
+    <div class="form-wrap">
+      <form id="inquireForm" novalidate>
+        <div class="form-progress"><div class="form-progress__bar" id="bar"></div></div>
+
+        <!-- Step 1 — You -->
+        <fieldset class="form-step is-active" data-step="1">
+          <p class="form-step__eyebrow">Step 1 / 5 — You</p>
+          <h2 class="form-step__title">Let us begin with you</h2>
+          <div class="field">
+            <label for="f-names">Full name(s)</label>
+            <input type="text" id="f-names" name="names" placeholder="Both partners, if you wish" required>
+            <p class="field__error">May we have your name?</p>
+          </div>
+          <div class="field">
+            <label for="f-email">Email</label>
+            <input type="email" id="f-email" name="email" placeholder="you@email.com" required>
+            <p class="field__error">A valid email lets us reply to you.</p>
+          </div>
+          <div class="field">
+            <label for="f-phone">Phone / WhatsApp</label>
+            <input type="tel" id="f-phone" name="phone" placeholder="+1 …">
+          </div>
+          <div class="field">
+            <span class="field__legend">How did you find us?</span>
+            <div class="choices" data-name="found" data-single>
+              <label><input type="radio" name="found" value="Instagram"><span>Instagram</span></label>
+              <label><input type="radio" name="found" value="Referral"><span>Referral</span></label>
+              <label><input type="radio" name="found" value="Press"><span>Press</span></label>
+              <label><input type="radio" name="found" value="Google / AI search"><span>Google / AI search</span></label>
+              <label><input type="radio" name="found" value="Other"><span>Other</span></label>
+            </div>
+          </div>
+        </fieldset>
+
+        <!-- Step 2 — The Celebration -->
+        <fieldset class="form-step" data-step="2">
+          <p class="form-step__eyebrow">Step 2 / 5 — The Celebration</p>
+          <h2 class="form-step__title">The celebration</h2>
+          <div class="field">
+            <label for="f-date">Date or timeframe</label>
+            <input type="text" id="f-date" name="date" placeholder="A date, a season, or still deciding" required>
+            <p class="field__error">A season or “still deciding” is perfectly fine.</p>
+          </div>
+          <div class="field">
+            <label for="f-destination">Destination or location</label>
+            <input type="text" id="f-destination" name="destination" placeholder="City, country — or open to recommendations" required>
+            <p class="field__error">“Open to recommendations” is a lovely answer too.</p>
+          </div>
+          <div class="field">
+            <span class="field__legend">Estimated guests</span>
+            <div class="choices" data-name="guests" data-single>
+              <label><input type="radio" name="guests" value="Up to 50"><span>Up to 50</span></label>
+              <label><input type="radio" name="guests" value="50–120"><span>50–120</span></label>
+              <label><input type="radio" name="guests" value="120–250"><span>120–250</span></label>
+              <label><input type="radio" name="guests" value="250+"><span>250+</span></label>
+            </div>
+          </div>
+          <div class="field">
+            <span class="field__legend">Type of celebration</span>
+            <div class="choices" data-name="type" data-single>
+              <label><input type="radio" name="type" value="Wedding"><span>Wedding</span></label>
+              <label><input type="radio" name="type" value="Multi-day celebration"><span>Multi-day celebration</span></label>
+              <label><input type="radio" name="type" value="Destination wedding"><span>Destination wedding</span></label>
+              <label><input type="radio" name="type" value="Private event"><span>Private event</span></label>
+            </div>
+          </div>
+        </fieldset>
+
+        <!-- Step 3 — The Vision -->
+        <fieldset class="form-step" data-step="3">
+          <p class="form-step__eyebrow">Step 3 / 5 — The Vision</p>
+          <h2 class="form-step__title">Your vision</h2>
+          <div class="field">
+            <label for="f-vision">What kind of experience are you dreaming of?</label>
+            <textarea id="f-vision" name="vision" placeholder="Tell us, in your own words…"></textarea>
+          </div>
+          <div class="field">
+            <span class="field__legend">Which services do you need?</span>
+            <div class="choices" data-name="services">
+              <label><input type="checkbox" name="services" value="Full Planning & Production"><span>Full Planning &amp; Production</span></label>
+              <label><input type="checkbox" name="services" value="Creative Direction only"><span>Creative Direction only</span></label>
+              <label><input type="checkbox" name="services" value="Destination & Logistics"><span>Destination &amp; Logistics</span></label>
+              <label><input type="checkbox" name="services" value="Partial / Month-of"><span>Partial / Month-of</span></label>
+            </div>
+          </div>
+        </fieldset>
+
+        <!-- Step 4 — Investment -->
+        <fieldset class="form-step" data-step="4">
+          <p class="form-step__eyebrow">Step 4 / 5 — Investment</p>
+          <h2 class="form-step__title">Your investment</h2>
+          <p class="form-step__intro">
+            To serve you fully, we design celebrations from a certain scale of
+            investment. Please select your range.
+          </p>
+          <div class="field">
+            <div class="choices choices--stack" data-name="investment" data-single data-required>
+              <label><input type="radio" name="investment" value="$100,000 – $250,000"><span>$100,000 – $250,000</span></label>
+              <label><input type="radio" name="investment" value="$250,000 – $500,000"><span>$250,000 – $500,000</span></label>
+              <label><input type="radio" name="investment" value="$500,000 – $1,000,000"><span>$500,000 – $1,000,000</span></label>
+              <label><input type="radio" name="investment" value="$1,000,000 +"><span>$1,000,000 +</span></label>
+              <label><input type="radio" name="investment" value="Prefer to discuss privately"><span>Prefer to discuss privately</span></label>
+            </div>
+            <p class="field__error">Please select a range — “prefer to discuss privately” is always available.</p>
+          </div>
+        </fieldset>
+
+        <!-- Step 5 — A last word -->
+        <fieldset class="form-step" data-step="5">
+          <p class="form-step__eyebrow">Step 5 / 5 — A last word</p>
+          <h2 class="form-step__title">A last word</h2>
+          <div class="field">
+            <label for="f-more">Anything else we should know?</label>
+            <textarea id="f-more" name="more" placeholder="Optional"></textarea>
+          </div>
+          <div class="field">
+            <label class="consent" style="text-transform:none; letter-spacing:0; font-size:0.82rem">
+              <input type="checkbox" name="consent" value="yes" required>
+              <span>I agree to be contacted regarding my enquiry.</span>
+            </label>
+            <p class="field__error">We need your consent to reply.</p>
+            <label class="consent" style="text-transform:none; letter-spacing:0; font-size:0.82rem">
+              <input type="checkbox" name="newsletter" value="yes">
+              <span>Receive our journal.</span>
+            </label>
+          </div>
+        </fieldset>
+
+        <div class="form-nav" id="formNav">
+          <button type="button" class="btn btn--ghost" id="backBtn" style="visibility:hidden">← Back</button>
+          <button type="button" class="btn" id="nextBtn">Continue</button>
+        </div>
+      </form>
+
+      <div class="form-confirmation" id="confirm">
+        <h2>Thank you.</h2>
+        <p>Your celebration has our full attention. We reply to every enquiry within 48 hours.</p>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <p>Madame Wedding Design — Wedding Planning &amp; Production · Paris</p>
+    <p><a href="mailto:hello@madamewedding.design">hello@madamewedding.design</a></p>
+  </footer>
+
+  <script src="/assets/js/page.js"></script>
+  <script src="/assets/js/inquire.js"></script>
+</body>
+</html>

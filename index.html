@@ -3,14 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MADAME — Luxury Wedding Design &amp; Production | France, Italy &amp; Europe</title>
-  <meta name="description" content="MADAME is a luxury wedding design &amp; production house founded by Estelle Bogaert in Paris — creating bespoke celebrations across France, Italy and Europe for couples from New York to Texas. Featured in Vogue, Martha Stewart Weddings and Brides.">
+  <title>Madame Wedding Design — Luxury Wedding Planning &amp; Production | France, Italy &amp; Europe</title>
+  <meta name="description" content="Madame Wedding Design is a luxury wedding planning &amp; production house founded by Estelle Bogaert in Paris — creating bespoke celebrations across France, Italy and Europe for couples from New York to Texas. Featured in Vogue, Martha Stewart Weddings and Brides.">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90' font-family='Georgia'>M</text></svg>">
-  <link rel="preload" as="image" href="assets/video/hero-poster.jpg">
+  <link rel="preload" as="image" href="/assets/img/hero-photo.jpg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/main.css">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;1,9..144,300;1,9..144,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <link rel="stylesheet" href="/assets/css/pages.css">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -18,7 +19,7 @@
     "name": "Madame Wedding Design",
     "alternateName": "MADAME",
     "founder": { "@type": "Person", "name": "Estelle Bogaert" },
-    "description": "Luxury wedding design & production house based in Paris, France — bespoke celebrations across France, Italy and Europe, from $100,000 to $1M+. Featured in Vogue (7 editions), Martha Stewart Weddings, Brides, Style Me Pretty and Carats & Cake; named among the 15 best wedding planners in Europe.",
+    "description": "Luxury wedding planning & production house based in Paris, France — bespoke celebrations across France, Italy and Europe, from $100,000 to $1M+. Featured in Vogue (7 editions), Martha Stewart Weddings, Brides, Style Me Pretty and Carats & Cake; named among the 15 best wedding planners in Europe.",
     "address": { "@type": "PostalAddress", "addressLocality": "Paris", "addressCountry": "FR" },
     "areaServed": ["France", "Italy", "Portugal", "Europe"],
     "email": "hello@madamewedding.design",
@@ -28,19 +29,19 @@
 </head>
 <body>
 
-  <!-- ============ OPENING SEQUENCE — the threshold ============ -->
+  <!-- ============ INTRO / ENTER — the threshold ============ -->
   <div class="intro" id="intro">
-    <video class="intro__video" id="heroVideo"
-           autoplay muted loop playsinline
-           poster="assets/video/hero-poster.jpg">
-      <source src="assets/video/hero-film.mp4" type="video/mp4">
-      <!-- TODO: add assets/video/hero-film.webm fallback when the real film is ready -->
+    <!-- Desktop: still photograph. Mobile (<768px): the vertical film, muted. -->
+    <img class="intro__photo media-desktop" src="/assets/img/hero-photo.jpg" alt="A Madame Wedding Design celebration under a glasshouse — chandeliers and flowered tables">
+    <video class="intro__video media-mobile" id="introVideo" autoplay muted loop playsinline
+           poster="/assets/video/hero-poster.jpg">
+      <source src="/assets/video/hero-film.mp4" type="video/mp4">
     </video>
     <div class="intro__veil"></div>
     <div class="intro__content">
-      <p class="intro__eyebrow">Wedding Design &amp; Production</p>
-      <h1 class="intro__logo">MADAME</h1>
-      <button class="intro__enter" id="enterBtn" aria-label="Enter the site">Enter</button>
+      <p class="intro__eyebrow">Wedding Planning &amp; Production</p>
+      <h1 class="intro__logo">MADAME<span class="intro__logo-sub">Wedding Design</span></h1>
+      <button class="intro__enter" id="enterBtn" aria-label="Enter the site"><span class="pulse">Enter</span></button>
     </div>
   </div>
 
@@ -48,91 +49,157 @@
   <div class="site" id="site" hidden>
 
     <header class="nav" id="nav">
-      <a class="nav__logo" href="#top">MADAME</a>
+      <a class="nav__logo" href="/">Madame Wedding Design</a>
       <nav class="nav__links" aria-label="Main navigation">
-        <a href="#maison">The Maison</a>
-        <a href="#weddings">Weddings</a>
-        <a href="#journal">The Journal</a>
-        <a class="nav__inquire" href="#inquire">Inquire</a>
+        <a href="/maison/">The Maison</a>
+        <a href="/weddings/">Weddings</a>
+        <a href="/services/">Services</a>
+        <a href="/journal/">The Journal</a>
+        <a class="nav__inquire" href="/inquire/">Inquire</a>
       </nav>
     </header>
 
     <main id="top">
 
-      <!-- Hero film, revisited inside the site -->
+      <!-- Hero: photo on desktop, the film on mobile -->
       <section class="hero">
-        <video class="hero__video" id="siteVideo" autoplay muted loop playsinline
-               poster="assets/video/hero-poster.jpg">
-          <source src="assets/video/hero-film.mp4" type="video/mp4">
+        <img class="hero__photo media-desktop" src="/assets/img/hero-photo.jpg" alt="A Madame Wedding Design celebration under a glasshouse — chandeliers and flowered tables">
+        <video class="hero__video media-mobile" id="siteVideo" autoplay muted loop playsinline
+               poster="/assets/video/hero-poster.jpg">
+          <source src="/assets/video/hero-film.mp4" type="video/mp4">
         </video>
         <div class="hero__line reveal">
-          <p class="hero__text">Celebrations composed like couture —<br>in France, Italy &amp; beyond.</p>
+          <p class="hero__eyebrow">A limited number of celebrations each year</p>
+          <p class="hero__text">Weddings composed as <em>works of art.</em></p>
         </div>
       </section>
 
       <!-- Manifesto -->
-      <section class="manifesto" id="maison">
+      <section class="manifesto">
         <p class="manifesto__text reveal">
-          MADAME is a wedding design house, not a planning service.
-          Founded by <em>Estelle Bogaert</em> in Paris, the maison composes
-          a small number of celebrations each year — for couples who cross
-          an ocean to be married in a place that feels inevitable.
+          We do not plan weddings. We compose <em>atmospheres</em> — worlds made
+          once, for one family, and never again.
         </p>
-        <a class="link-quiet reveal" href="#inquire">Discover the Maison →</a>
       </section>
 
-      <!-- Weddings — curated glimpse (placeholders until real photos arrive) -->
-      <section class="weddings" id="weddings">
-        <h2 class="section-title reveal">Weddings</h2>
-        <div class="weddings__grid">
-          <!-- TODO: replace placeholders with real photos in assets/img/ -->
-          <a class="wedding-card reveal" href="#inquire">
-            <div class="wedding-card__img wedding-card__img--a" role="img" aria-label="Luxury wedding at Castiglion del Bosco, Val d'Orcia, Tuscany"></div>
-            <p class="wedding-card__caption">Castiglion del Bosco — <span>Tuscany</span></p>
-            <p class="wedding-card__origin">A New York couple, Texas roots</p>
+      <!-- Weddings — curated glimpse, rendered from /data/weddings.json -->
+      <section class="weddings">
+        <div class="shead reveal">
+          <span class="shead__k">Selected Weddings</span>
+          <h2 class="shead__title">A quiet portfolio</h2>
+        </div>
+        <div class="weddings__grid" id="homeWeddings"><!-- injected by main.js --></div>
+        <p class="reveal" style="margin-top:3rem"><a class="link-quiet" href="/weddings/">View all weddings →</a></p>
+      </section>
+
+      <!-- The Maison — teaser -->
+      <section class="maison-split">
+        <div class="maison-split__txt reveal">
+          <span class="shead__k">The Maison</span>
+          <h2 class="maison-split__title">An atelier of<br>rare celebrations</h2>
+          <p>
+            Madame Wedding Design is a wedding planning &amp; production house
+            dedicated to a small number of extraordinary weddings each year.
+            Founded by Estelle Bogaert in Paris, the maison conceives every
+            celebration as a singular work — a world of light, texture, music
+            and detail, built entirely around one family.
+          </p>
+          <p>
+            From first conversation to final candle, we hold every thread:
+            creative direction, planning, and flawless production across France,
+            Italy and Europe.
+          </p>
+          <a href="/maison/" class="link-quiet" style="margin-top:1.6rem">Discover the Maison →</a>
+        </div>
+        <div class="maison-split__img reveal">
+          <div class="ph ph--b" role="img" aria-label="Founder portrait — coming soon"></div>
+          <!-- TODO: replace with founder portrait: /assets/img/founder.jpg -->
+        </div>
+      </section>
+
+      <!-- Services -->
+      <section class="services-cards">
+        <div class="shead reveal">
+          <span class="shead__k">The Work</span>
+          <h2 class="shead__title">How we accompany you</h2>
+        </div>
+        <div class="svc reveal">
+          <a class="svc__card" href="/services/">
+            <div class="svc__num">I</div>
+            <h3>Full Planning &amp; Production</h3>
+            <p>The complete composition of your celebration, from concept and creative direction to the flawless execution of every moment.</p>
           </a>
-          <a class="wedding-card reveal" href="#inquire">
-            <div class="wedding-card__img wedding-card__img--b" role="img" aria-label="Vintage Chanel bride, Paris wedding featured in Vogue"></div>
-            <p class="wedding-card__caption">A Vogue Bride — <span>Paris</span></p>
-            <p class="wedding-card__origin">Featured in seven editions of Vogue</p>
+          <a class="svc__card" href="/services/">
+            <div class="svc__num">II</div>
+            <h3>Creative Direction</h3>
+            <p>The vision, the aesthetic language, the atmosphere — for couples and teams who need a singular artistic hand.</p>
           </a>
-          <a class="wedding-card reveal" href="#inquire">
-            <div class="wedding-card__img wedding-card__img--c" role="img" aria-label="Château wedding in Burgundy, France for an Irish couple"></div>
-            <p class="wedding-card__caption">A Château in Burgundy — <span>France</span></p>
-            <p class="wedding-card__origin">An Irish couple, married in France</p>
+          <a class="svc__card" href="/services/">
+            <div class="svc__num">III</div>
+            <h3>Destination &amp; Logistics</h3>
+            <p>Seamless production of weddings across France, Italy and Europe, with the discretion and precision our clients expect.</p>
           </a>
         </div>
       </section>
 
-      <!-- As Seen In -->
-      <section class="press" id="journal">
-        <p class="press__label reveal">As seen in</p>
-        <p class="press__names reveal">
-          VOGUE&ensp;·&ensp;Martha Stewart Weddings&ensp;·&ensp;BRIDES&ensp;·&ensp;Style&nbsp;Me&nbsp;Pretty&ensp;·&ensp;Carats&nbsp;&amp;&nbsp;Cake&ensp;·&ensp;Over&nbsp;The&nbsp;Moon
-        </p>
+      <!-- As Seen In — dark band -->
+      <section class="press-dark">
+        <p class="press-dark__k reveal">As Seen In</p>
+        <div class="press-dark__logos reveal" id="pressLogos"><!-- injected from /data/press.json --></div>
+        <p class="reveal" style="margin-top:3rem"><a class="link-quiet link-quiet--light" href="/journal/#as-seen-in">All press features →</a></p>
+      </section>
+
+      <!-- Journal -->
+      <section class="journal-cards">
+        <div class="shead reveal">
+          <span class="shead__k">The Journal</span>
+          <h2 class="shead__title">Stories &amp; the art of hosting</h2>
+        </div>
+        <div class="jgrid" id="homeJournal"><!-- injected from /data/weddings.json --></div>
       </section>
 
       <!-- Inquire -->
-      <section class="inquire" id="inquire">
-        <p class="inquire__text reveal">We accept a limited number of celebrations each year.</p>
-        <a class="inquire__cta reveal" href="mailto:hello@madamewedding.design">Inquire</a>
+      <section class="inquire">
+        <p class="inquire__text reveal">We accept a limited number of celebrations each year.<br>Share a few details and we will reply, personally, within 48 hours.</p>
+        <a class="inquire__cta reveal" href="/inquire/">Inquire</a>
       </section>
 
     </main>
 
-    <footer class="footer">
-      <p>MADAME — Wedding Design &amp; Production · Paris</p>
-      <p><a href="mailto:hello@madamewedding.design">hello@madamewedding.design</a></p>
+    <footer class="footer-rich">
+      <div class="footer-rich__grid">
+        <div class="footer-rich__brand">
+          <div class="footer-rich__lg">MADAME<span>Wedding Design</span></div>
+          <p>A wedding planning &amp; production house for a limited number of celebrations each year.</p>
+        </div>
+        <div class="footer-rich__col">
+          <div class="footer-rich__k">Explore</div>
+          <a href="/maison/">The Maison</a>
+          <a href="/weddings/">Weddings</a>
+          <a href="/services/">Services</a>
+          <a href="/journal/">The Journal</a>
+          <a href="/inquire/">Inquire</a>
+        </div>
+        <div class="footer-rich__col">
+          <div class="footer-rich__k">Contact</div>
+          <a href="mailto:hello@madamewedding.design">hello@madamewedding.design</a>
+          <a href="https://www.instagram.com/" target="_blank" rel="noopener">Instagram</a>
+        </div>
+      </div>
+      <div class="footer-rich__base">
+        <span>© 2026 Madame Wedding Design</span>
+        <span>Wedding Planning &amp; Production · Paris</span>
+      </div>
     </footer>
 
   </div>
 
   <!-- Persistent sound toggle -->
-  <button class="sound" id="soundBtn" hidden aria-label="Toggle sound" aria-pressed="false">◑</button>
+  <button class="sound" id="soundBtn" hidden aria-label="Toggle sound" aria-pressed="false">◐</button>
 
-  <!-- Music track: drop your file at assets/audio/music.mp3 and it will play on Enter -->
-  <audio id="music" src="assets/audio/music.mp3" loop preload="none"></audio>
+  <!-- Music track: drop your file at assets/audio/music.mp3 and it will take priority over the film's own sound -->
+  <audio id="music" src="/assets/audio/music.mp3" loop preload="none"></audio>
 
-  <script src="assets/js/main.js"></script>
+  <script src="/assets/js/main.js"></script>
 </body>
 </html>

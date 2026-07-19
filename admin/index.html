@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>L'Atelier — Administration Madame Wedding Design</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90' font-family='Georgia'>A</text></svg>">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--alabaster:#F6F3EE;--linen:#E7E0D5;--ink:#1E1A17;--ink-soft:#4A443E;--sage:#8A8B72;--taupe:#A79A88;}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{background:var(--alabaster);color:var(--ink);font-family:'Inter',sans-serif;font-weight:300;font-size:14px;line-height:1.6;}
+h1,h2,h3{font-family:'Fraunces',Georgia,serif;font-weight:300;}
+.top{display:flex;justify-content:space-between;align-items:center;padding:18px 28px;border-bottom:1px solid var(--linen);background:#fff;}
+.top h1{font-size:20px;}
+.top h1 span{font-size:11px;font-family:'Inter',sans-serif;letter-spacing:.24em;text-transform:uppercase;color:var(--taupe);margin-left:12px;}
+.btn{font-family:'Inter',sans-serif;font-size:11px;letter-spacing:.18em;text-transform:uppercase;border:1px solid var(--ink);background:var(--ink);color:var(--alabaster);padding:11px 22px;cursor:pointer;transition:opacity .3s;}
+.btn:hover{opacity:.85;}
+.btn.ghost{background:none;color:var(--ink);}
+.btn.small{padding:7px 14px;font-size:10px;}
+.btn.danger{border-color:#9c4a2f;color:#9c4a2f;background:none;}
+.btn:disabled{opacity:.4;cursor:default;}
+.layout{display:grid;grid-template-columns:280px 1fr;min-height:calc(100vh - 65px);}
+.side{border-right:1px solid var(--linen);background:#FBF9F5;padding:22px;}
+.side .k{font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--taupe);margin-bottom:14px;}
+.side ul{list-style:none;}
+.side li{padding:11px 12px;border:1px solid transparent;cursor:pointer;margin-bottom:6px;transition:background .3s;}
+.side li:hover{background:var(--linen);}
+.side li.active{border-color:var(--ink);background:#fff;}
+.side li .t{font-family:'Fraunces',Georgia,serif;font-size:16px;}
+.side li .m{font-size:11px;color:var(--ink-soft);}
+.main{padding:34px 42px;max-width:880px;}
+.gate{text-align:center;padding:12vh 24px;}
+.gate h2{font-size:30px;margin-bottom:14px;}
+.gate p{max-width:52ch;margin:0 auto 26px;color:var(--ink-soft);}
+.warn{background:#F4E9DC;border:1px solid #E0CDB4;padding:14px 18px;margin:18px auto;max-width:60ch;font-size:13px;}
+fieldset{border:1px solid var(--linen);background:#fff;padding:26px 28px;margin-bottom:26px;}
+legend{font-family:'Fraunces',Georgia,serif;font-size:20px;padding:0 10px;}
+.hint{font-size:12px;color:var(--taupe);margin-bottom:16px;}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:18px;}
+.row3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:18px;}
+.f{margin-bottom:16px;}
+.f label{display:block;font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-soft);margin-bottom:6px;}
+.f input[type=text],.f input[type=number],.f input[type=url],.f textarea{width:100%;border:none;border-bottom:1px solid rgba(30,26,23,.3);background:transparent;font-family:'Inter',sans-serif;font-weight:300;font-size:15px;padding:7px 0;outline:none;}
+.f input:focus,.f textarea:focus{border-bottom-color:var(--sage);}
+.f textarea{min-height:80px;resize:vertical;}
+.f .note{font-size:11.5px;color:var(--taupe);margin-top:4px;}
+.check{display:flex;gap:10px;align-items:center;font-size:13.5px;}
+.check input{accent-color:var(--sage);width:16px;height:16px;}
+.thumbs{display:flex;flex-wrap:wrap;gap:10px;margin-top:12px;}
+.thumb{position:relative;width:96px;}
+.thumb img{width:96px;height:120px;object-fit:cover;display:block;border:1px solid var(--linen);}
+.thumb .x{position:absolute;top:4px;right:4px;background:rgba(30,26,23,.75);color:#fff;border:none;width:20px;height:20px;cursor:pointer;font-size:11px;line-height:1;}
+.thumb .tag{position:absolute;left:4px;bottom:4px;background:rgba(246,243,238,.85);font-size:9px;padding:2px 5px;letter-spacing:.06em;}
+.press-row{display:grid;grid-template-columns:1fr 2fr auto;gap:12px;margin-bottom:10px;align-items:end;}
+.actions{display:flex;gap:14px;align-items:center;margin:10px 0 40px;}
+.status{font-size:13px;color:var(--sage);}
+.status.err{color:#9c4a2f;}
+#dropzone{border:1px dashed var(--taupe);padding:22px;text-align:center;color:var(--ink-soft);cursor:pointer;transition:background .3s;}
+#dropzone.drag{background:var(--linen);}
+.steps{font-size:13px;color:var(--ink-soft);max-width:60ch;margin:20px auto;text-align:left;}
+.steps li{margin-bottom:8px;margin-left:18px;}
+code{background:var(--linen);padding:1px 6px;font-size:12px;}
+@media(max-width:900px){.layout{grid-template-columns:1fr;}.side{border-right:none;border-bottom:1px solid var(--linen);}.row,.row3{grid-template-columns:1fr;}}
+</style>
+</head>
+<body>
+
+<div class="top">
+  <h1>L'Atelier<span>Administration — Madame Wedding Design</span></h1>
+  <div>
+    <button class="btn ghost" id="openBtn">Ouvrir le dossier du site</button>
+    <button class="btn" id="saveBtn" disabled>Enregistrer</button>
+  </div>
+</div>
+
+<!-- Écran d'accueil avant ouverture du dossier -->
+<div class="gate" id="gate">
+  <h2>Bienvenue dans L'Atelier</h2>
+  <p>
+    Cette application te permet d'ajouter ou de modifier un mariage — avec ses deux
+    volets, <strong>Portfolio</strong> (la galerie) et <strong>Journal</strong> (le récit + la presse) —
+    sans toucher au code. Elle écrit directement dans le dossier du site sur ton ordinateur.
+  </p>
+  <ol class="steps">
+    <li>Clique sur <strong>« Ouvrir le dossier du site »</strong> et choisis le dossier du projet (celui qui contient <code>index.html</code>).</li>
+    <li>Ajoute ou modifie tes mariages, dépose les photos, écris le récit.</li>
+    <li>Clique sur <strong>« Enregistrer »</strong> : les photos sont copiées, les pages créées, les données mises à jour.</li>
+    <li>Re-glisse le dossier sur Netlify (ou <code>git push</code>) pour publier.</li>
+  </ol>
+  <p class="warn" id="apiWarn" hidden>
+    Ton navigateur ne permet pas l'écriture de fichiers locaux.
+    Utilise <strong>Chrome</strong> ou <strong>Edge</strong> sur ordinateur pour L'Atelier.
+  </p>
+  <button class="btn" id="openBtn2">Ouvrir le dossier du site</button>
+</div>
+
+<!-- Application -->
+<div class="layout" id="app" hidden>
+  <aside class="side">
+    <div class="k">Mariages</div>
+    <ul id="list"></ul>
+    <button class="btn ghost small" id="newBtn" style="margin-top:14px">+ Nouveau mariage</button>
+  </aside>
+
+  <main class="main">
+    <div class="actions">
+      <span class="status" id="status"></span>
+    </div>
+
+    <form id="wform" onsubmit="return false">
+
+      <fieldset>
+        <legend>Le mariage</legend>
+        <div class="row">
+          <div class="f"><label>Couple (privé, sert de référence)</label><input type="text" id="w-couple" placeholder="Sophie & Gordon"></div>
+          <div class="f"><label>Titre affiché</label><input type="text" id="w-title" placeholder="Castiglion del Bosco"></div>
+        </div>
+        <div class="row3">
+          <div class="f"><label>Lieu / venue</label><input type="text" id="w-venue" placeholder="Castiglion del Bosco"></div>
+          <div class="f"><label>Destination / région</label><input type="text" id="w-destination" placeholder="Val d'Orcia, Tuscany"></div>
+          <div class="f"><label>Pays</label><input type="text" id="w-country" placeholder="Italy"></div>
+        </div>
+        <div class="row3">
+          <div class="f"><label>Année</label><input type="number" id="w-year" placeholder="2026"></div>
+          <div class="f"><label>Origine du couple (affichée)</label><input type="text" id="w-origin" placeholder="A New York couple, Texas roots"></div>
+          <div class="f"><label>Slug (URL)</label><input type="text" id="w-slug" placeholder="castiglion-del-bosco"><div class="note">Généré automatiquement ; modifiable avant 1er enregistrement.</div></div>
+        </div>
+        <div class="f"><label>Récit court (portfolio, 1–2 phrases, en anglais)</label><textarea id="w-story" placeholder="In the golden hills of the Val d'Orcia…"></textarea></div>
+        <div class="f"><label>Mots-clés SEO (séparés par des virgules)</label><input type="text" id="w-keywords" placeholder="Castiglion del Bosco wedding, luxury wedding planner Tuscany"><div class="note">Voir la carte SEO/GEO — un jeu de mots-clés par mariage.</div></div>
+        <div class="f check"><input type="checkbox" id="w-featured"><label for="w-featured" style="margin:0;text-transform:none;letter-spacing:0;font-size:13.5px">Mettre en avant sur la page d'accueil</label></div>
+      </fieldset>
+
+      <fieldset>
+        <legend>Portfolio — la galerie</legend>
+        <p class="hint">8 à 12 photos maximum. La première devient la photo de couverture. Formats JPG/WebP conseillés, ≤ 500 Ko par photo si possible.</p>
+        <div id="dropzone">Dépose tes photos ici, ou clique pour choisir</div>
+        <input type="file" id="photoInput" accept="image/*" multiple hidden>
+        <div class="thumbs" id="thumbs"></div>
+      </fieldset>
+
+      <fieldset>
+        <legend>Journal — le récit &amp; la presse</legend>
+        <div class="f check" style="margin-bottom:18px"><input type="checkbox" id="j-published"><label for="j-published" style="margin:0;text-transform:none;letter-spacing:0;font-size:13.5px">Publier ce mariage dans le Journal</label></div>
+        <div id="journalFields">
+          <div class="row">
+            <div class="f"><label>Titre de l'article (anglais)</label><input type="text" id="j-title" placeholder="A Vintage Chanel Bride in Paris"></div>
+            <div class="f"><label>Extrait (1 phrase)</label><input type="text" id="j-excerpt" placeholder="The Paris wedding whose gown travelled through seven editions of Vogue."></div>
+          </div>
+          <div class="f"><label>Récit (3–6 phrases, en anglais)</label><textarea id="j-story"></textarea></div>
+          <p class="hint">Photos du Journal (3 à 5) — si tu n'en déposes pas, les 3 premières du portfolio seront réutilisées (aucun poids ajouté).</p>
+          <div class="thumbs" id="jthumbs"></div>
+          <button class="btn ghost small" id="jphotoBtn" type="button">+ Ajouter des photos au Journal</button>
+          <input type="file" id="jphotoInput" accept="image/*" multiple hidden>
+          <div style="margin-top:22px">
+            <label style="font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-soft)">Parutions presse</label>
+            <div id="pressRows" style="margin-top:10px"></div>
+            <button class="btn ghost small" id="pressBtn" type="button">+ Ajouter une parution</button>
+          </div>
+        </div>
+      </fieldset>
+
+      <div class="actions">
+        <button class="btn" id="saveBtn2" type="button">Enregistrer ce mariage</button>
+        <button class="btn danger small" id="deleteBtn" type="button" hidden>Retirer du site</button>
+        <span class="status" id="status2"></span>
+      </div>
+    </form>
+  </main>
+</div>
+
+<script src="/admin/admin.js"></script>
+</body>
+</html>

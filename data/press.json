@@ -1,0 +1,18 @@
+{
+  "logos": [
+    "VOGUE", "Martha Stewart Weddings", "BRIDES", "Style Me Pretty", "Carats & Cake",
+    "Over The Moon", "Wedding Sparrow", "The Wed", "Amber & Muse", "PartySlate", "Wezoree", "Wed Vibes"
+  ],
+  "authority": [
+    { "name": "The Wed — 15 Best Wedding Planners in Europe", "url": "https://thewed.com/magazine/15-best-wedding-planners-in-europe" },
+    { "name": "Wezoree — Top 5 Planners in Paris", "url": "https://wezoree.com/inspiration/top-5-planners-paris/" },
+    { "name": "Wezoree — Top 10 Planners in France", "url": "https://wezoree.com/inspiration/top-10-planners-in-france/" },
+    { "name": "Wezoree — Elevating Love: The Madame Wedding Design Story", "url": "https://wezoree.com/interviews/planners/elevating-love-the-madame-wedding-design-story/" },
+    { "name": "Brides — 160+ Black-Owned Wedding Businesses", "url": "https://www.brides.com/black-owned-wedding-businesses-4846896" },
+    { "name": "Style Me Pretty — A Chianti Wedding Weekend", "url": "https://www.stylemepretty.com/2026/06/11/crystal-chandeliers-and-crimson-blooms-set-the-tone-for-this-chianti-wedding-weekend/" },
+    { "name": "Martha Stewart — A Paris Civil Ceremony", "url": "https://www.marthastewart.com/8043718/paris-civil-ceremony-tropical-reception-alainm" },
+    { "name": "Carats & Cake — The Making of a French Wedding", "url": "https://caratsandcake.com/articles/french-wedding-making-of-cindy-and-franklyn" },
+    { "name": "Vogue — Makeda's Wedding", "url": "https://www.vogue.com/slideshow/makeda-saggau-sackey-glamazon-diaries-wedding" },
+    { "name": "Over The Moon — Aimee & John in France", "url": "https://blog.overthemoon.com/weddings/aimee-connolly-and-john-greene-in-france/" }
+  ]
+}
